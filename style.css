@@ -19,14 +19,14 @@
 }
 .displayUp{
     border: 2px solid black;
-    width: 440px;
+    width: 380px;
     height: 5rem;
     border-radius: 50px;
     justify-content: flex-start;
     padding-left: 30px;  
-    /* background-color: black; */
     color: white;
-    font-size: larger;
+    font-size: 4rem;
+    text-align: end;
 }
 .displayDown{
     border: 2px solid black;
@@ -35,8 +35,11 @@
     border-radius: 50px;
     justify-content: flex-start;
     padding-left: 30px;  
-    /* background-color: black; */
     color: white;
+    text-align: end;
+    width: 380px;
+    font-size: 5rem;
+    
 }
 .button {
   display: flex;
