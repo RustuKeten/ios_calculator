@@ -13,14 +13,35 @@
   width: 440px;
   grid-template-columns: repeat(4, 100px);
   gap: 10px;
-  margin-top: 280px;
+  margin-top: 100px;
   margin-left: 20px;
   justify-content: center;
+}
+.displayUp{
+    border: 2px solid black;
+    width: 440px;
+    height: 5rem;
+    border-radius: 50px;
+    justify-content: flex-start;
+    padding-left: 30px;  
+    /* background-color: black; */
+    color: white;
+    font-size: larger;
+}
+.displayDown{
+    border: 2px solid black;
+    width: 440px;
+    height: 5rem;
+    border-radius: 50px;
+    justify-content: flex-start;
+    padding-left: 30px;  
+    /* background-color: black; */
+    color: white;
 }
 .button {
   display: flex;
   height: 100;
-    width: 100;
+  width: 100;
   border: 50%;
   box-sizing: border-box;
   color: #FFFF;
@@ -28,6 +49,7 @@
   border-radius: 50%;
   align-items: center;
   justify-content:center;
+  font-size: 1.5REM;
    
 }
 .zero{
@@ -37,7 +59,7 @@
     justify-content: flex-start;
     padding-left: 30px;
 }
-.funtion{
+.function{
     background-color: #a5a5a5;
     color: black;
 }
