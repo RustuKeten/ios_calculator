@@ -57,18 +57,46 @@ zero.addEventListener("click", ()=>{
 });
 
 //**  basic operators */
-plus.addEventListener("click", ()=>{
-    displayDown.innerHTML += plus.textContent 
+plus.addEventListener("click", () => {
+  if (!displayDown.innerHTML.includes("+") ) {
+    displayDown.innerHTML += plus.innerHTML;
+  } 
+   else if (
+    displayDown.innerHTML.includes("-") &&
+    displayDown.innerHTML.includes("x") &&
+    displayDown.innerHTML.includes("÷")
+  ) {
+    result(); 
+    displayUp.innerHTML = displayDown.innerHTML;
+    
+  } else {
+    displayUp.innerHTML = displayDown.innerHTML;
+    result();
+  }
 });
-minus.addEventListener("click", ()=>{
-    displayDown.innerHTML += minus.textContent; 
+minus.addEventListener("click", () => {
+  if (!displayDown.innerHTML.includes("-")) {
+    displayDown.innerHTML += minus.innerHTML;
+  } else {
+    displayUp.innerHTML = displayDown.innerHTML;
+    result();
+  }
 });
-multiple.addEventListener("click", ()=>{
-    displayDown.innerHTML += "x"; 
+multiple.addEventListener("click", () => {
+  if (!displayDown.innerHTML.includes("x")) {
+    displayDown.innerHTML += multiple.innerHTML;
+  } else {
+    displayUp.innerHTML = displayDown.innerHTML;
+    result();
+  }
 });
-divide.addEventListener("click", ()=>{
-    displayDown.innerHTML += "÷"; 
-    console.log(typeof displayDown.innerHTML);
+divide.addEventListener("click", () => {
+  if (!displayDown.innerHTML.includes("÷")) {
+    displayDown.innerHTML += divide.innerHTML;
+  } else {
+    displayUp.innerHTML = displayDown.innerHTML;
+    result();
+  }
 });
 equal.addEventListener("click", ()=>{
     if(!displayUp.innerHTML){
@@ -92,6 +120,13 @@ pmBtn.addEventListener("click", ()=>{
 })
 perBtn.addEventListener("click", ()=>{
     // pm function;
+})
+dot.addEventListener("click", ()=>{
+    if (!displayDown.innerHTML.includes(".")) {
+      displayDown.innerHTML += ".";
+    }else {
+        displayDown.innerHTML += "";
+    };
 })
 //** result function */
 let result = ()=>{
