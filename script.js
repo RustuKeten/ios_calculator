@@ -20,9 +20,13 @@ const dot = document.querySelector(".dot");
 const equal = document.querySelector(".equal");
 let displayUp = document.querySelector(".displayUp");
 let displayDown = document.querySelector(".displayDown");
+let firstNumber ;
+let secondNumber ;
+let splitWord;
+
 //* number*//
 num1.addEventListener("click", ()=>{
-    displayDown.innerHTML += num1.textContent    
+    displayDown.innerHTML += num1.textContent;  
 });
 num2.addEventListener("click", ()=>{
     displayDown.innerHTML += num2.textContent 
@@ -52,7 +56,7 @@ zero.addEventListener("click", ()=>{
     displayDown.innerHTML += zero.textContent 
 });
 
-//**   operators */
+//**  basic operators */
 plus.addEventListener("click", ()=>{
     displayDown.innerHTML += plus.textContent 
 });
@@ -60,16 +64,25 @@ minus.addEventListener("click", ()=>{
     displayDown.innerHTML += minus.textContent; 
 });
 multiple.addEventListener("click", ()=>{
-    displayDown.innerHTML += "*"; 
+    displayDown.innerHTML += "x"; 
 });
 divide.addEventListener("click", ()=>{
     displayDown.innerHTML += "÷"; 
+    console.log(typeof displayDown.innerHTML);
 });
 equal.addEventListener("click", ()=>{
-    displayUp.innerHTML += displayDown.innerHTML
-    result();
+    if(!displayUp.innerHTML){
+        displayUp.innerHTML += displayDown.innerHTML
+        result();
+    }else {
+        displayUp.innerHTML = displayDown.innerHTML
+        result();
+    };
+    
+    
+    
 });
-
+//** special operators */
 acBtn.addEventListener("click", ()=>{
     displayDown.innerHTML ="";
     displayUp.innerHTML ="";
@@ -80,16 +93,20 @@ pmBtn.addEventListener("click", ()=>{
 perBtn.addEventListener("click", ()=>{
     // pm function;
 })
-//** functions(+-*/) */
+//** result function */
 let result = ()=>{
     if (displayUp.innerHTML.includes("+")) {
-      displayDown.innerHTML = +displayUp.innerHTML[0] + +displayUp.innerHTML[2];
+       splitWord= displayUp.innerHTML.split("+");
+       displayDown.innerHTML = +splitWord[0] + +splitWord[1];
     } else if (displayUp.innerHTML.includes("-")) {
-      displayDown.innerHTML = +displayUp.innerHTML[0] - +displayUp.innerHTML[2];
-    } else if (displayUp.innerHTML.includes("*")) {
-      displayDown.innerHTML = +displayUp.innerHTML[0] * +displayUp.innerHTML[2];
+      splitWord = displayUp.innerHTML.split("-");
+      displayDown.innerHTML = +splitWord[0] - +splitWord[1];
+    } else if (displayUp.innerHTML.includes("x")) {
+      splitWord = displayUp.innerHTML.split("x");
+      displayDown.innerHTML = +splitWord[0] * +splitWord[1];
     } else if (displayUp.innerHTML.includes("÷")) {
-      displayDown.innerHTML = +displayUp.innerHTML[0] / +displayUp.innerHTML[2];
+      splitWord = displayUp.innerHTML.split("÷");
+       displayDown.innerHTML = (+splitWord[0] / +splitWord[1]).toFixed(2);
     }
 };
 
