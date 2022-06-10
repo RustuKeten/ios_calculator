@@ -22,50 +22,51 @@ let displayUp = document.querySelector(".displayUp");
 let displayDown = document.querySelector(".displayDown");
 //* number*//
 num1.addEventListener("click", ()=>{
-    displayUp.innerHTML += num1.textContent    
+    displayDown.innerHTML += num1.textContent    
 });
 num2.addEventListener("click", ()=>{
-    displayUp.innerHTML += num2.textContent 
+    displayDown.innerHTML += num2.textContent 
 });
 num3.addEventListener("click", ()=>{
-    displayUp.innerHTML += num3.textContent 
+    displayDown.innerHTML += num3.textContent 
 });
 num4.addEventListener("click", ()=>{
-    displayUp.innerHTML += num4.textContent 
+    displayDown.innerHTML += num4.textContent 
 });
 num5.addEventListener("click", ()=>{
-    displayUp.innerHTML += num5.textContent 
+    displayDown.innerHTML += num5.textContent 
 });
 num6.addEventListener("click", ()=>{
-    displayUp.innerHTML += num6.textContent 
+    displayDown.innerHTML += num6.textContent 
 });
 num7.addEventListener("click", ()=>{
-    displayUp.innerHTML += num7.textContent 
+    displayDown.innerHTML += num7.textContent 
 });
 num8.addEventListener("click", ()=>{
-    displayUp.innerHTML += num8.textContent 
+    displayDown.innerHTML += num8.textContent 
 });
 num9.addEventListener("click", ()=>{
-    displayUp.innerHTML += num9.textContent   
+    displayDown.innerHTML += num9.textContent   
 });
 zero.addEventListener("click", ()=>{
-    displayUp.innerHTML += zero.textContent 
+    displayDown.innerHTML += zero.textContent 
 });
 
 //**   operators */
 plus.addEventListener("click", ()=>{
-    displayUp.innerHTML += plus.textContent 
+    displayDown.innerHTML += plus.textContent 
 });
 minus.addEventListener("click", ()=>{
-    displayUp.innerHTML += minus.textContent; 
+    displayDown.innerHTML += minus.textContent; 
 });
 multiple.addEventListener("click", ()=>{
-    displayUp.innerHTML += "*"; 
+    displayDown.innerHTML += "*"; 
 });
 divide.addEventListener("click", ()=>{
-    displayUp.innerHTML += "÷"; 
+    displayDown.innerHTML += "÷"; 
 });
 equal.addEventListener("click", ()=>{
+    displayUp.innerHTML += displayDown.innerHTML
     result();
 });
 
@@ -81,8 +82,14 @@ perBtn.addEventListener("click", ()=>{
 })
 //** functions(+-*/) */
 let result = ()=>{
-    if(displayUp.contains()){
-        displayDown.innerHTML = displayUp.innerHTML[0] + displayUp.innerHTML[2];
+    if (displayUp.innerHTML.includes("+")) {
+      displayDown.innerHTML = +displayUp.innerHTML[0] + +displayUp.innerHTML[2];
+    } else if (displayUp.innerHTML.includes("-")) {
+      displayDown.innerHTML = +displayUp.innerHTML[0] - +displayUp.innerHTML[2];
+    } else if (displayUp.innerHTML.includes("*")) {
+      displayDown.innerHTML = +displayUp.innerHTML[0] * +displayUp.innerHTML[2];
+    } else if (displayUp.innerHTML.includes("÷")) {
+      displayDown.innerHTML = +displayUp.innerHTML[0] / +displayUp.innerHTML[2];
     }
 };
 
