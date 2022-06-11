@@ -19,26 +19,27 @@
 }
 .displayUp{
     border: 2px solid black;
-    width: 380px;
+    width: 400px;
     height: 5rem;
-    border-radius: 50px;
+    
     justify-content: flex-start;
     padding-left: 30px;  
     color: white;
     font-size: 4rem;
     text-align: end;
+    overflow: hidden;
 }
 .displayDown{
     border: 2px solid black;
-    width: 440px;
     height: 5rem;
-    border-radius: 50px;
+ 
     justify-content: flex-start;
     padding-left: 30px;  
     color: white;
     text-align: end;
-    width: 380px;
+    width: 400px;
     font-size: 5rem;
+    overflow: hidden;
     
 }
 .button {
