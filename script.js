@@ -126,11 +126,16 @@ acBtn.addEventListener("click", ()=>{
     displayDown.innerHTML ="";
     displayUp.innerHTML ="";
 })
-pmBtn.addEventListener("click", ()=>{
-    // pm function;
+pmBtn.addEventListener("click", () => {
+  
 })
 perBtn.addEventListener("click", ()=>{
-    // pm function;
+    if (!displayDown.innerHTML.length > 0) {
+      displayDown.innerHTML ="";
+      
+    } else {
+      displayUp.innerHTML = +displayDown.innerHTML / 100;;
+    }
 })
 dot.addEventListener("click", ()=>{
     if (!displayDown.innerHTML.includes(".")) {
