@@ -58,24 +58,25 @@ zero.addEventListener("click", ()=>{
 
 //**  basic operators */
 plus.addEventListener("click", () => {
-  if (!displayDown.innerHTML.includes("+") ) {
-    displayDown.innerHTML += plus.innerHTML;
-  } 
-   else if (
-    displayDown.innerHTML.includes("-") &&
-    displayDown.innerHTML.includes("x") &&
-    displayDown.innerHTML.includes("÷")
+  if (
+    !displayDown.innerHTML.includes("+") &&
+    !displayDown.innerHTML.includes("-") &&
+    !displayDown.innerHTML.includes("÷") &&
+    !displayDown.innerHTML.includes("x")
   ) {
-    result(); 
-    displayUp.innerHTML = displayDown.innerHTML;
-    
+    displayDown.innerHTML += plus.innerHTML;
   } else {
     displayUp.innerHTML = displayDown.innerHTML;
     result();
   }
 });
 minus.addEventListener("click", () => {
-  if (!displayDown.innerHTML.includes("-")) {
+  if (
+    !displayDown.innerHTML.includes("-") &&
+    !displayDown.innerHTML.includes("÷") &&
+    !displayDown.innerHTML.includes("x") &&
+    !displayDown.innerHTML.includes("+")
+  ) {
     displayDown.innerHTML += minus.innerHTML;
   } else {
     displayUp.innerHTML = displayDown.innerHTML;
@@ -83,7 +84,12 @@ minus.addEventListener("click", () => {
   }
 });
 multiple.addEventListener("click", () => {
-  if (!displayDown.innerHTML.includes("x")) {
+  if (
+    !displayDown.innerHTML.includes("-") &&
+    !displayDown.innerHTML.includes("÷") &&
+    !displayDown.innerHTML.includes("x") &&
+    !displayDown.innerHTML.includes("+")
+  ) {
     displayDown.innerHTML += multiple.innerHTML;
   } else {
     displayUp.innerHTML = displayDown.innerHTML;
@@ -91,7 +97,12 @@ multiple.addEventListener("click", () => {
   }
 });
 divide.addEventListener("click", () => {
-  if (!displayDown.innerHTML.includes("÷")) {
+  if (
+    !displayDown.innerHTML.includes("-") &&
+    !displayDown.innerHTML.includes("÷") &&
+    !displayDown.innerHTML.includes("x") &&
+    !displayDown.innerHTML.includes("+")
+  ) {
     displayDown.innerHTML += divide.innerHTML;
   } else {
     displayUp.innerHTML = displayDown.innerHTML;
